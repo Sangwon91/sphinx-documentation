@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Sphinx 설치 &#8212; Sphinx Usage  documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sphinx 사용법" href="../usage/index.html" />
+    <link rel="prev" title="Welcome to Sphinx Documentation!" href="../index.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Sphinx Usage  documentation</p>
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  Sphinx 설치
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../usage/index.html">
+  Sphinx 사용법
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   파이썬 설정
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vscode">
+   VSCode 설정
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="sphinx">
+<h1>Sphinx 설치<a class="headerlink" href="#sphinx" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>파이썬 설정<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Sphinx를 윈도우에서 원활하게 사용하기 위해서는 시스템의 파이썬을
+사용하는 것을 가정합니다.
+따라서 <a class="reference external" href="https://www.python.org/downloads/">파이썬을 다운로드</a> 합니다.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>파이썬을 설치한 뒤 파이썬과 <strong>파이썬 스크립트 폴더</strong> 경로가 환경변수
+<code class="docutils literal notranslate"><span class="pre">PATH</span></code> (혹은 <code class="docutils literal notranslate"><span class="pre">Path</span></code>) 에 등록되었는지 확인해야 합니다.
+파이썬 스크립트 폴더는 라이브러리 설치시 제공되는 스크립트들이 저장되는 폴더입니다.
+Sphinx는 <code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code> 등의 스크립트를 사용하기 때문에
+환경변수에 등록되어야 합니다.</p>
+<figure class="align-center">
+<img alt="../_images/env_var.png" src="../_images/env_var.png" />
+</figure>
+</div>
+<p>파이썬 설정이 완료되었으면 다음과 같은 Sphinx와 관련 라이브러리를 설치합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sphinx.</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span>
+
+<span class="c1"># Sphinx에서 사용할 테마.</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx_rtd_theme</span>
+
+<span class="c1"># Jupyter notebook을 문서에 사용하기 위한 extension들.</span>
+<span class="n">pip</span> <span class="n">ipython</span> <span class="n">nbsphinx</span>
+</pre></div>
+</div>
+<p>위의 라이브러리들은 가상환경이 아닌 시스템의 기본 파이썬 환경에 설치되어야 합니다.</p>
+</section>
+<section id="vscode">
+<h2>VSCode 설정<a class="headerlink" href="#vscode" title="Permalink to this headline">#</a></h2>
+<p>작성시 효율을 높히기 위하여 변경 사항을 실시간으로
+볼 수 있는 preview 기능이 필요합니다.
+VSCode와 extension을 사용하면 프리뷰 기능을 사용할 수 있습니다.</p>
+<p>VSCode extension 탭에서 <code class="docutils literal notranslate"><span class="pre">ReStructuredText</span></code> extension을 설치합니다.</p>
+<figure class="align-center">
+<img alt="../_images/rst_ext.png" src="../_images/rst_ext.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>다음 설정을 위해서는 VSCode 프로젝트가 필요합니다.
+아래의 설정은 문서 프로젝트를 새로 만들 때마다 해줘야 합니다.
+아래와 같이 프로젝트를 생성한 뒤 터미널을 실행하고 기본 시스템 환경에서
+<code class="docutils literal notranslate"><span class="pre">shpinx-quickstart</span></code> 를 실행합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sphinx</span><span class="o">-</span><span class="n">quickstart</span> <span class="n">doc</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>명령어 뒤의 doc은 <code class="docutils literal notranslate"><span class="pre">doc</span></code> 폴더에 문서 기본 파일들을 생성하겠다는 의미입니다.</p>
+</div>
+<figure class="align-center">
+<img alt="../_images/sstart.png" src="../_images/sstart.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>몇가지 질문을 하는데 적당히 입력합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Separate</span> <span class="n">source</span> <span class="ow">and</span> <span class="n">build</span> <span class="n">directories</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="p">[</span><span class="n">n</span><span class="p">]:</span> <span class="n">y</span>
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">name</span><span class="p">:</span> <span class="n">Project</span> <span class="k">for</span> <span class="n">Setting</span> <span class="n">Test</span>
+<span class="o">&gt;</span> <span class="n">Author</span> <span class="n">name</span><span class="p">(</span><span class="n">s</span><span class="p">):</span> <span class="n">Sangwon</span> <span class="n">Lee</span>
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">release</span> <span class="p">[]:</span>
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">language</span> <span class="p">[</span><span class="n">en</span><span class="p">]:</span>
+</pre></div>
+</div>
+<p>위의 과정이 완료되면 <code class="docutils literal notranslate"><span class="pre">doc</span></code> 경로에 기본 문서 파일이 생성됩니다.
+다음과 같이 <code class="docutils literal notranslate"><span class="pre">doc/</span></code> 폴더에서 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> 을 입력하면
+<code class="docutils literal notranslate"><span class="pre">doc/build/html/index.html</span></code> 라는 파일이 생성됩니다.
+웹브라우저를 사용하여 실행하면 다음과 같습니다.</p>
+<figure class="align-default">
+<img alt="../_images/dpage.png" src="../_images/dpage.png" />
+</figure>
+<p>이렇게 작성한 뒤 <code class="docutils literal notranslate"><span class="pre">make</span></code> 를 사용하여 확인할 수도 있지만 위에서 언급한 것과 같이
+실시간으로 확인하는 것이 더 효율적입니다.</p>
+<p>실시간 프리뷰를 위하여 프로젝트 설정 파일인 <code class="docutils literal notranslate"><span class="pre">.vscode/settings.json</span></code> 의 내용에
+다음과 같은 항목을 추가합니다.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;esbonio.sphinx.buildDir&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/doc/build&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;esbonio.sphinx.confDir&quot;</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/doc/source&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;esbonio.sphinx.srcDir&quot;</span><span class="w">   </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/doc/source&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;restructuredtext.preview.scrollEditorWithPreview&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;restructuredtext.preview.scrollPreviewWithEditor&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>만약 나중에 <code class="docutils literal notranslate"><span class="pre">doc</span></code> 이 아닌 다른 경로를 사용하신다면 그에 맞게 수정하면 됩니다.
+맨 아래 2개는 스크롤 관련 옵션입니다. 가끔 코드와 프리뷰의 스크롤 싱크가 맞지 않아서
+<code class="docutils literal notranslate"><span class="pre">false</span></code> 로 설정하였습니다.</p>
+<p>위의 과정을 완료한 뒤 <code class="docutils literal notranslate"><span class="pre">doc/source/index.rst</span></code> 파일을 연 뒤
+오른쪽 상단의 <img alt="button" src="../_images/btn.png" /> 를 클릭하여 프리뷰를 실행하면 다음과
+같은 화면을 확인할 수 있습니다.</p>
+<figure class="align-default">
+<img alt="../_images/pview.png" src="../_images/pview.png" />
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>만약 잘 작동하지 않는다면 VSCode를 재실행하거나
+혹은 VSCode 오른쪽 아래의 <img alt="es" src="../_images/es.png" /> 를 클릭하여 <code class="docutils literal notranslate"><span class="pre">esbonion</span></code> 서버를 재시작 하세요.
+가끔 이미 실행중인 <code class="docutils literal notranslate"><span class="pre">esbonio</span></code> 서버가 새로운 변경사항을
+확인 못 하는 경우가 있습니다.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">doc/source/index.rst</span></code> 에서 원하는 문장을 작성한 뒤 저장하면 오른쪽의 프리뷰도
+업데이트 됩니다.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Welcome to Project for Setting Test&#39;s documentation!</span>
+<span class="gh">====================================================</span>
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> 2
+   <span class="nc">:caption:</span> Contents:
+
+아무말이나 써도 되나요? 되는군요.
+
+<span class="gh">Indices and tables</span>
+<span class="gh">==================</span>
+
+<span class="m">*</span> <span class="na">:ref:</span><span class="nv">`genindex`</span>
+<span class="m">*</span> <span class="na">:ref:</span><span class="nv">`modindex`</span>
+<span class="m">*</span> <span class="na">:ref:</span><span class="nv">`search`</span>
+</pre></div>
+</div>
+<figure class="align-default">
+<img alt="../_images/pview2.png" src="../_images/pview2.png" />
+</figure>
+<p>위에서 설치한 기본 테마를 적용하려면 <code class="docutils literal notranslate"><span class="pre">doc/source/conf.py</span></code> 를
+다음과 같이 수정합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span>
+</pre></div>
+</div>
+<p>그 다음 <code class="docutils literal notranslate"><span class="pre">esbonio</span></code> 서버를 재시작 하면 다음과 같이 좀 더 읽기 좋은 테마가 적용됩니다.</p>
+<figure class="align-default">
+<img alt="../_images/rod_theme.png" src="../_images/rod_theme.png" />
+</figure>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Welcome to Sphinx Documentation!</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="../usage/index.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Sphinx 사용법</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2022, Sangwon Lee.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>
