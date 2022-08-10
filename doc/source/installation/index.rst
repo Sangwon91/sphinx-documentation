@@ -105,6 +105,14 @@ VSCode extension 탭에서 ``Esbonio`` extension을 설치합니다.
 본인의 가상환경 이름이 ``sphinx-env`` 가 아니라면 그 또한 맞는 파이썬 경로로 수정하면 
 됩니다.
 
+.. note:: 
+
+    만약 리눅스에서 venv를 사용하여 가상환경을 생성했다면 
+    ``"esbonio.server.pythonPath": "${workspaceFolder}/sphinx-env/bin/python"``
+    의 값이 사용됩니다. 이처럼 OS와 가상환경 생성방법 등의 영향을 받기 때문에
+    주의해야 합니다.
+
+
 Live Server 설정
 -------------------
 
