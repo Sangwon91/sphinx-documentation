@@ -67,7 +67,7 @@
 
     가끔 프리뷰가 잘 작동하지 않는 경우 해볼 수 있는 선택지:
 
-    1. VSCode 오른쪽 아래의 ``esbonio`` 를 클릭하여 재시작 한다.
+    1. VSCode의 ``esbonio`` 서버를 재시작 한다.
 
     2. 
        ``make clean`` 으로 이미 생성된 html을 다 삭제하고 다시 ``make html``
@@ -76,5 +76,5 @@
     3. ``sphinx-apidoc -f -o doc/source my_package`` 를 다시 해본다.
 
 
-    ReStructuredText가 안정적인 확장은 아니라 가끔 이상하니 주의하시기 바랍니다.
+    프리뷰 기능이 안정적인 확장은 아니라 가끔 이상하니 주의하시기 바랍니다.
 
