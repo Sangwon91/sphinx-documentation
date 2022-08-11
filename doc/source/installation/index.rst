@@ -5,14 +5,14 @@ Sphinx 설치
 파이썬 설정
 ===========
 
-Sphinx 역시 파이썬 라이브러리이고 프로젝트마다 다른 추가 설치를 요구하기 때문에 
+Sphinx 역시 파이썬 라이브러리이고 프로젝트마다 다른 추가 설치를 요구하기 때문에
 다른 라이브러리와 같이 가상환경으로 사용하도록 하겠습니다. 초심자의 경우 실시간으로
-변경 사항을 확인하며 작성해야 하기 때문에 VSCode 확장을 사용하여 프리뷰를 
-사용하도록 설명하겠습니다. 
+변경 사항을 확인하며 작성해야 하기 때문에 VSCode 확장을 사용하여 프리뷰를
+사용하도록 설명하겠습니다.
 
 먼저 가상 환경을 다음과 같이 생성합니다.
 
-.. code-block:: 
+.. code-block::
 
     python -m venv sphinx-env
 
@@ -27,7 +27,7 @@ Sphinx 역시 파이썬 라이브러리이고 프로젝트마다 다른 추가 �
 
     pip install sphinx
 
-.. warning:: 
+.. warning::
 
     생성한 가상 환경에서 설치하는지 반드시 확인하세요.
 
@@ -55,14 +55,14 @@ VSCode extension 탭에서 ``Esbonio`` extension을 설치합니다.
 
 다음 설정을 위해서는 VSCode 프로젝트가 필요합니다.
 아래의 설정은 문서 프로젝트를 새로 만들 때마다 해줘야 합니다.
-아래와 같이 프로젝트를 생성한 뒤 터미널을 실행하고 기본 시스템 환경에서 
-``shpinx-quickstart`` 를 실행합니다. 
+아래와 같이 프로젝트를 생성한 뒤 터미널을 실행하고 기본 시스템 환경에서
+``sphinx-quickstart`` 를 실행합니다.
 
-.. code-block:: 
+.. code-block::
 
     sphinx-quickstart doc
 
-.. note:: 
+.. note::
 
     명령어 뒤의 doc은 ``doc`` 폴더에 문서 기본 파일들을 생성하겠다는 의미입니다.
 
@@ -73,11 +73,11 @@ VSCode extension 탭에서 ``Esbonio`` extension을 설치합니다.
     > Separate source and build directories (y/n) [n]: y
     > Project name: Project for Setting Test
     > Author name(s): Sangwon Lee
-    > Project release []: 
+    > Project release []:
     > Project language [en]:
 
 위의 과정이 완료되면 ``doc`` 경로에 기본 문서 파일이 생성됩니다.
-다음과 같이 ``doc/`` 폴더에서 ``make html`` 을 입력하면 
+다음과 같이 ``doc/`` 폴더에서 ``make html`` 을 입력하면
 ``doc/build/html/index.html`` 라는 파일이 생성됩니다.
 웹브라우저를 사용하여 실행하면 다음과 같습니다.
 
@@ -102,12 +102,12 @@ VSCode extension 탭에서 ``Esbonio`` extension을 설치합니다.
 
 
 만약 나중에 ``doc`` 이 아닌 다른 경로를 사용하신다면 그에 맞게 수정하면 됩니다. 또한
-본인의 가상환경 이름이 ``sphinx-env`` 가 아니라면 그 또한 맞는 파이썬 경로로 수정하면 
+본인의 가상환경 이름이 ``sphinx-env`` 가 아니라면 그 또한 맞는 파이썬 경로로 수정하면
 됩니다.
 
-.. note:: 
+.. note::
 
-    만약 리눅스에서 venv를 사용하여 가상환경을 생성했다면 
+    만약 리눅스에서 venv를 사용하여 가상환경을 생성했다면
     ``"esbonio.server.pythonPath": "${workspaceFolder}/sphinx-env/bin/python"``
     의 값이 사용됩니다. 이처럼 OS와 가상환경 생성방법 등의 영향을 받기 때문에
     주의해야 합니다.
@@ -131,10 +131,11 @@ Live Server 설정
 
 .. figure:: _static/pview_.png
 
-.. note:: 
+.. note::
 
     포트는 기본이 5500이지만 만약 해당 포트가 사용중이라면
-    다른 포트 번호가 사용됩니다.
+    다른 포트 번호가 사용됩니다. 저의 경우 5500 포트가 사용중이라 5501 포트가
+    활성화 되었습니다.
 
 ``doc/source/index.rst`` 에서 원하는 문장을 작성한 뒤 저장하면 웹 브라우저의 화면도
 업데이트 됩니다.
@@ -167,7 +168,7 @@ Live Server 설정
       html 을 생성 (``sphinx`` 기능을 사용하여).
    2. ``Live Server`` 서버가 html 파일 변화를 감지하여 업데이트.
 
-위와 같은 원리로 변경 사항을 실시간으로 확인할 수 있습니다. 단점으로는 
+위와 같은 원리로 변경 사항을 실시간으로 확인할 수 있습니다. 단점으로는
 어떠한 이유인지 모르겠지만 업데이트 할 때 스크롤이 맨 위로 가는 경우가 있습니다.
 
 테마 설정
@@ -175,7 +176,7 @@ Live Server 설정
 
 테마를 변경할 수 있습니다. 적용하려면 우선 원하는 테마를 설치합니다.
 
-.. code-block:: 
+.. code-block::
 
     pip install sphinx_rtd_theme
 
@@ -192,5 +193,5 @@ Live Server 설정
 .. note::
 
     뭔가 작동을 잘 안 한다면 재시작하세요. 프리뷰가 생각보다 불안정해서
-    저도 뭐가 무슨 문제인지 정확히 파악하기 어렵습니다. 혹은 ``doc`` 폴더에서 
+    저도 뭐가 무슨 문제인지 정확히 파악하기 어렵습니다. 혹은 ``doc`` 폴더에서
     ``make clean`` 을 수행하세요.
