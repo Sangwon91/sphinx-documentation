@@ -4,11 +4,11 @@ ReStructuredText 문법
 
 Sphinx는 ``ReStructuredText`` 로 작성된 파일의 관리를 도와주는
 Python 기반의 도구입니다. 즉 문서 작성 자체는 ``ReStructuredText`` 로
-작성하여야 합니다. Markdown을 사용해보신 분들은 Markdown과 유사하다고
+작성하여야 합니다. Markdown을 사용해보신 분들은 Markdown과 유사하다고 
 생각하시면 됩니다.
 
 ``ReStructuredText`` 의 기능을 모두 설명할 수는 없으니 기본적인 문서 작성에
-필요한 기능 위주로 설명하도록 하겠습니다. 모든 기능은
+필요한 기능 위주로 설명하도록 하겠습니다. 모든 기능은 
 `공식 문서 <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
 에서 확인하실 수 있습니다. 실시간 프리뷰를 사용하여 작성하면서 따라해보세요.
 
@@ -81,8 +81,8 @@ Input:
 Output:
 
 .. image:: _static/sections.png
-
-.. tip::
+   
+.. tip:: 
 
     섹션 텍스트의 크기는 문서 내부에서 상대적인 우선 순위만 비교합니다.
     예를 들어 다음 두 문서는 동일하게 작동합니다.
@@ -113,7 +113,7 @@ Output:
 
         Section Title
         ``````````````
-
+    
 
 1. 문자 스타일
 ===============
@@ -122,20 +122,20 @@ Input:
 
 .. code-block:: rst
 
-   *기울이기* 옆에는 스페이스로 비워두기 붙여서 작성하면 에러
+   *기울이기* 옆에는 스페이스로 비워두기 붙혀서 작성하면 에러
 
-   **볼드** 옆에는 스페이스로 비워두기 붙여서 작성하면 에러
+   **볼드** 옆에는 스페이스로 비워두기 붙혀서 작성하면 에러
 
-   ``코드`` 옆에는 스페이스로 비워두기 붙여서 작성하면 에러
+   ``코드`` 옆에는 스페이스로 비워두기 붙혀서 작성하면 에러
 
 
 Output:
 
-*기울이기* 옆에는 스페이스로 비워두기 붙여서 작성하면 에러
+*기울이기* 옆에는 스페이스로 비워두기 붙혀서 작성하면 에러
 
-**볼드** 옆에는 스페이스로 비워두기 붙여서 작성하면 에러
+**볼드** 옆에는 스페이스로 비워두기 붙혀서 작성하면 에러
 
-``코드`` 옆에는 스페이스로 비워두기 붙여서 작성하면 에러
+``코드`` 옆에는 스페이스로 비워두기 붙혀서 작성하면 에러
 
 
 4. 리스트
@@ -148,9 +148,9 @@ Input:
 .. code-block:: rst
 
     * 하나
-
+  
         * 새로운 계층
-
+  
     * 둘
     * 셋
 
@@ -184,9 +184,8 @@ Output:
 #. 둘
 #. 셋
 
-.. tip::
-    계층 사이에는 엔터가 필요합니다. 위에서 새로운 계층을 작성한 경우의 엔터를
-    확인하세요.
+.. tip:: 
+    계층 사이에는 엔터가 필요합니다.
 
 5. 이미지
 ==========
@@ -202,7 +201,7 @@ Output:
 .. image:: _static/test_image.jpg
 
 
-.. important::
+.. important:: 
 
     **Directives**: 이미지에서 사용한 것 처럼 ``.. 명령어::`` 형태의 구문을
     directives라고 부릅니다. 일반적으론 다음과 같은 형태를 가집니다.
@@ -233,7 +232,7 @@ Output:
 
     |
 
-    위 directive의 경우 컨텐트 값이 필요 없습니다.
+    위 directive의 경우 컨텐트 값이 필요 없습니다. 
     컨텐트 값이 필요한 경우는 코드 예시를 들 수 있습니다. 다음과 같은 코드는 C++
     예시 코드 블락을 생성합니다.
 
@@ -294,14 +293,14 @@ Input:
 .. code-block:: rst
 
     .. 주석 한 라인
-    ..
+    .. 
         주석 멀티 라인
         두 줄 짜리 주석 작성하기.
 
-Output:
+Output: 
 
 .. 주석 한 라인
-    ..
+    .. 
         주석 멀티 라인
         두 줄 짜리 주석 작성하기.
 
@@ -347,19 +346,19 @@ Output:
    +------------------------+------------+---------------------+
 
 
-테이블을 작성하는 `여러가지 방법 <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-directives>`_
+테이블을 작성하는 `여러가지 방법 <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-directives>`_ 
 이 있습니다. 위의 방법이 가장 번거롭지만 디테일하게 작성하는 방법입니다.
 
 간단한 테이블의 경우 ``csv`` 스타일로도 작성할 수 있습니다.
 
-Input:
+Input: 
 
 .. code-block:: rst
 
     .. csv-table:: Table from csv format
         :header-rows: 1
         :widths: 15, 10, 30
-
+        
         head 1,head 2,head 3
         1,2,3
         4,,5
@@ -369,7 +368,7 @@ Output:
 .. csv-table:: Table from csv format
    :header-rows: 1
    :widths: 15, 10, 30
-
+   
    head 1,head 2,head 3
    1,2,3
    4,,5
@@ -399,7 +398,7 @@ Input:
 
 .. code-block:: rst
 
-    .. code-block::
+    .. code-block:: 
 
         import sys
 
@@ -408,7 +407,7 @@ Input:
 
 Output:
 
-.. code-block::
+.. code-block:: 
 
     import sys
 
@@ -460,7 +459,7 @@ Output:
 
 Interacive 셀 예시는 ``>>>`` 와 함께 작성합니다
 
-Input:
+Input: 
 
 .. code-block::
 
@@ -492,15 +491,15 @@ Output:
 * ``tip``
 * ``warning``
 * ``admonition``
-
+         
 강조 표시는 다음과 같이 할 수 있습니다.
 
 Input:
 
 .. code-block:: rst
 
-    .. important::
-
+    .. important:: 
+        
         중요
 
     .. note::
@@ -511,7 +510,7 @@ Input:
 
         팁
 
-    .. warning::
+    .. warning:: 
 
         조심
 
@@ -521,8 +520,8 @@ Input:
 
 Output:
 
-.. important::
-
+.. important:: 
+    
     중요
 
 .. note::
@@ -533,7 +532,7 @@ Output:
 
     팁
 
-.. warning::
+.. warning:: 
 
     조심
 

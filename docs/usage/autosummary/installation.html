@@ -279,22 +279,24 @@
 <span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="linenos"> 3</span>
 <span class="linenos"> 4</span><span class="c1"># Python 라이브러리의 위치를 인식하기 위하여.</span>
-<span class="hll"><span class="linenos"> 5</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../..&#39;</span><span class="p">))</span>
-</span><span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="c1"># __init__(self) 넣기 위해서.</span>
-<span class="hll"><span class="linenos"> 8</span><span class="n">autoclass_content</span> <span class="o">=</span> <span class="s1">&#39;both&#39;</span>
-</span><span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
-<span class="hll"><span class="linenos">11</span>    <span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>
-</span><span class="hll"><span class="linenos">12</span>    <span class="s1">&#39;sphinx.ext.napoleon&#39;</span><span class="p">,</span>
-</span><span class="hll"><span class="linenos">13</span>    <span class="s1">&#39;sphinx.ext.autosummary&#39;</span><span class="p">,</span>
-</span><span class="linenos">14</span><span class="p">]</span>
-<span class="linenos">15</span>
-<span class="hll"><span class="linenos">16</span><span class="n">autosummary_generate</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span class="hll"><span class="linenos">17</span><span class="n">add_module_names</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span class="linenos">18</span>
-<span class="hll"><span class="linenos">19</span><span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_templates&#39;</span><span class="p">]</span>
-</span></pre></div>
+<span class="linenos"> 5</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../..&#39;</span><span class="p">))</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 8</span>    <span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>
+<span class="linenos"> 9</span>    <span class="s1">&#39;sphinx.ext.napoleon&#39;</span><span class="p">,</span>
+<span class="linenos">10</span>    <span class="s1">&#39;sphinx.ext.autosummary&#39;</span><span class="p">,</span>
+<span class="linenos">11</span><span class="p">]</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="c1"># 디폴트도 True라서 안 해도 됨.</span>
+<span class="linenos">14</span><span class="n">autosummary_generate</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="linenos">15</span><span class="c1"># 클레스에서 모듈 경로 삭제.</span>
+<span class="linenos">16</span><span class="n">add_module_names</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="linenos">17</span><span class="c1"># __init__(self) 넣기 위해서.</span>
+<span class="linenos">18</span><span class="n">autoclass_content</span> <span class="o">=</span> <span class="s1">&#39;both&#39;</span>
+<span class="linenos">19</span><span class="n">autodoc_inherit_docstrings</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_templates&#39;</span><span class="p">]</span>
+</pre></div>
 </div>
 <p>그 다음 <code class="docutils literal notranslate"><span class="pre">doc/source/_templates</span></code> 폴더에 다음과 같은 두 파일을 추가합니다.
 (아래 template는 <a class="reference external" href="https://github.com/JamesALeedham/Sphinx-Autosummary-Recursion">이곳</a>
@@ -315,7 +317,6 @@
 <span class="p">..</span> <span class="ow">autoclass</span><span class="p">::</span> {{ objname }}
    <span class="nc">:members:</span>
    <span class="nc">:show-inheritance:</span>
-   <span class="nc">:inherited-members:</span>
    <span class="nc">:special-members:</span> __call__, __add__, __mul__
 
    {% block methods %}
@@ -325,9 +326,11 @@
 <span class="p">   ..</span> <span class="ow">autosummary</span><span class="p">::</span>
       <span class="nc">:nosignatures:</span>
    {% for item in methods %}
+   {%- if item not in inherited_members %}
       {%- if not item.startswith(&#39;_&#39;) %}
       ~{{ name }}.{{ item }}
       {%- endif -%}
+   {%- endif -%}
    {%- endfor %}
    {% endif %}
    {% endblock %}
@@ -338,7 +341,9 @@
 
 <span class="p">   ..</span> <span class="ow">autosummary</span><span class="p">::</span>
    {% for item in attributes %}
+   {%- if item not in inherited_members %}
       ~{{ name }}.{{ item }}
+   {%- endif -%}
    {%- endfor %}
    {% endif %}
    {% endblock %}
@@ -419,6 +424,20 @@
 </pre></div>
 </div>
 <p>이 템플레이트에 맞춰 요약 문서가 생성되게 됩니다.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>템플레이트에서 사용된 문법은 Jinja입니다. 이 문법은 Flask에서도 사용됩니다.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Directive <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">rubic::</span> <span class="pre">내</span> <span class="pre">타이틀</span></code> 의 아웃풋은 다음과 같습니다.</p>
+<blockquote>
+<div><p class="rubric">내 타이틀</p>
+</div></blockquote>
+</div>
+<p>지금 설정의 경우 부모 클레스의 정보는 포함하지 않도록 했습니다.
+템플레이트에 사용할 수 있는 변수명의 경우 <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html">여기</a>
+에서 확인할 수 있습니다.</p>
 </section>
 
 
