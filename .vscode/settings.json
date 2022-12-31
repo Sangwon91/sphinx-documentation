@@ -3,7 +3,9 @@
     "esbonio.sphinx.confDir"  : "${workspaceFolder}/doc/source",
     "esbonio.sphinx.srcDir"   : "${workspaceFolder}/doc/source",
     "esbonio.server.enabled": true,
-    // "esbonio.server.pythonPath": "${workspaceFolder}/sphinx-env/bin/python",
-    "esbonio.server.pythonPath": "${workspaceFolder}/sphinx-env/Scripts/python.exe",
+    // For linux system.
+    // "esbonio.server.pythonPath": "${workspaceFolder}/.venv/bin/python",
+    // For windows system.
+    "esbonio.server.pythonPath": "${workspaceFolder}/.venv/Scripts/python.exe",
     "esbonio.server.logLevel": "debug",
 }
