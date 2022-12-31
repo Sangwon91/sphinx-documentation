@@ -5,7 +5,7 @@ description = ""
 authors = ["Sangwon <lsw91.main@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "sphinx_documentation"}]
+# packages = [{include = "sphinx_documentation"}]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.12"
