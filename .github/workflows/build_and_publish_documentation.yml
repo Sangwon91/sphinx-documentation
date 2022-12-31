@@ -39,8 +39,6 @@ jobs:
         # Use poetry run to activate virtualenv.
         run: |
           poetry shell
-          pip list
-          sphinx-build -M html doc/source doc/build
       - name: Publish to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
