@@ -11,6 +11,7 @@ packages = [{include = "sphinx_documentation"}]
 python = "^3.9"
 sphinx = "^6.0.0"
 furo = "^2022.12.7"
+sphinx-copybutton = "^0.5.1"
 
 
 [build-system]
