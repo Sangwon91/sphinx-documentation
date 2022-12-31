@@ -36,7 +36,6 @@ jobs:
       - name: Check installed libraries uinsg poetry.
         run: |
           poetry install
-          poetry show
       - name: Build documentation
         # We cannot use poetry shell as it's not an interactive environment.
         # sphinx-build -M html doc/source doc/build
