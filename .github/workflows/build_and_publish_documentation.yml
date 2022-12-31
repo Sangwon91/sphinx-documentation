@@ -36,7 +36,9 @@ jobs:
       - name: Check installed libraries uinsg poetry.
         run: poetry show
       - name: Build documentation
-        run: sphinx-build -M html doc/source doc/build
+        run: |
+          poetry shell
+          sphinx-build -M html doc/source doc/build
       - name: Publish to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
