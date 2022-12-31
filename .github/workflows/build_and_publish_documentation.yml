@@ -36,9 +36,10 @@ jobs:
       - name: Check installed libraries uinsg poetry.
         run: poetry show
       - name: Build documentation
-        # Use poetry run to activate virtualenv.
+        # We cannot use poetry shell as it's not an interactive environment.
         run: |
-          poetry shell
+          source $(poetry env info --path)/bin/activate
+          sphinx-build -M html doc/source doc/build
       - name: Publish to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
