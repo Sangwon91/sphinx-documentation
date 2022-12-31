@@ -16,3 +16,4 @@ Sphinx 사용법
     autodoc/index
     autosummary/index
     extensions
+    github_page
