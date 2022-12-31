@@ -8,10 +8,11 @@ readme = "README.md"
 packages = [{include = "sphinx_documentation"}]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.9,<3.12"
 sphinx = "^6.0.0"
 furo = "^2022.12.7"
 sphinx-copybutton = "^0.5.1"
+esbonio = "^0.15.0"
 
 
 [build-system]
