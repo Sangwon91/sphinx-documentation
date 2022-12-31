@@ -34,7 +34,9 @@ jobs:
         with:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Check installed libraries uinsg poetry.
-        run: poetry show
+        run: |
+          poetry install
+          poetry show
       - name: Build documentation
         # We cannot use poetry shell as it's not an interactive environment.
         # sphinx-build -M html doc/source doc/build
@@ -44,5 +46,5 @@ jobs:
       - name: Publish to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          gihub_token: $${{ secrets.GITHUB_TOKEN }}
+          github_token: $${{ secrets.GITHUB_TOKEN }}
           publish_dir: doc/build
