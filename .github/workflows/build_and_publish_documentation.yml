@@ -37,7 +37,13 @@ jobs:
         run: poetry show
       - name: Build documentation
         # Use poetry run to activate virtualenv.
-        run: poetry run sphinx-build -M html doc/source doc/build
+        run: |
+          # Activate poetry env.
+          poetry shell
+          # Check installed libraries in this env.
+          pip list
+          # Build sphinx docs.
+          sphinx-build -M html doc/source doc/build
       - name: Publish to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
