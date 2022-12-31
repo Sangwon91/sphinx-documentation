@@ -48,6 +48,6 @@ jobs:
           # I don't it is necessary.
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: doc/build/
+          publish_dir: doc/build/html
           # I don't it is necessary.
           force_orphan: true
