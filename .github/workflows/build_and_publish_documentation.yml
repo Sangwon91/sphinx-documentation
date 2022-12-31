@@ -45,10 +45,15 @@ jobs:
       - name: Publish to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          # You must create ACTION_TOKEN secrets in your repo.
-          # Any name can be used as secrets (in this case ACTION_TOKEN is used).
-          # The token can be created in Github setting page.
-          # E.g) Setting -> Developer settings -> Personal access tokens.
-          # Be careful as the token will be expired.
-          github_token: $${{ secrets.ACTION_TOKEN }}
-          publish_dir: doc/build
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: doc/build/
+          force_orphan: true
+        # with:
+        #   # You must create ACTION_TOKEN secrets in your repo.
+        #   # Any name can be used as secrets (in this case ACTION_TOKEN is used).
+        #   # The token can be created in Github setting page.
+        #   # E.g) Setting -> Developer settings -> Personal access tokens.
+        #   # Be careful as the token will be expired.
+        #   github_token: $${{ secrets.GITHUB_TOKEN }}
+        #   publish_dir: doc/build
