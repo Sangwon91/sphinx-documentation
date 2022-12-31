@@ -41,7 +41,7 @@ jobs:
         # sphinx-build -M html doc/source doc/build
         run: |
           source $(poetry env info --path)/bin/activate
-          pip list
+          sphinx-build -M html doc/source doc/build
       - name: Publish to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
