@@ -1,0 +1,20 @@
+name: Send email on new issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  email:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Send email
+      uses: actions/gmail-action@v1
+      with:
+        to: recipient@example.com
+        subject: New issue opened
+        body: |
+          A new issue has been opened on the repository.
+
+          Title: ${{ github.event.issue.title }}
+          Link: ${{ github.event.issue.html_url }}
