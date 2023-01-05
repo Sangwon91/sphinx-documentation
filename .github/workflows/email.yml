@@ -11,7 +11,7 @@ jobs:
     - name: Send email
       uses: actions/gmail-action@v1
       with:
-        to: recipient@example.com
+        to: lsw91.main@gmail.com
         subject: New issue opened
         body: |
           A new issue has been opened on the repository.
